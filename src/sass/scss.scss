@@ -1,0 +1,57 @@
+@import 'variables';
+@import 'mixins';
+@import 'functions';
+
+body {
+    color: $body-color;
+    background: $background-color;
+}
+
+header {
+    ul {
+        @include header-config();
+
+        li {
+            @include header-items(15px, 30px, $ul-color);
+
+            cursor: pointer;
+            border-bottom: 2px solid transparentize($color: #ffffff, $amount: 1);
+            transition: 0.3s;
+            &:hover {
+                border-bottom: 2px solid opacify($color: #ffffff, $amount: 1);
+                color: darken($color: $ul-color, $amount: 10%);
+            }
+        }
+    }
+}
+
+#header1 {
+    color: $first-header;
+}
+
+#header2 {
+    color: $second-header;
+}
+
+main {
+    h4 {
+        @include custom-media(600px) {
+            color: #02a;
+            font-style: italic;
+        }
+    }
+
+    p {
+        @include custom-media(500px) {
+            color: #f0f;
+        }
+    }
+}
+
+#second_p {
+    width: custom-width(20vw);
+
+    // Inherits the styles of "#header1".
+    @extend #header1;
+}
+

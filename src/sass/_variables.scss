@@ -1,0 +1,24 @@
+$first-header: #f00;
+$second-header: #05f;
+$ul-color: #ff0;
+
+$body-color: #000;
+$background-color: #fff;
+
+// If else conditions
+$dark-mode: white;
+// $dark-mode: black;
+// $dark-mode: grey;
+
+@if $dark-mode == black {
+    $body-color: #fff;
+    $background-color: #000;
+}
+@else if $dark-mode == grey {
+    $body-color: #fff;
+    $background-color: #555;
+}
+@else {
+    $body-color: #000;
+    $background-color: #fff;
+}

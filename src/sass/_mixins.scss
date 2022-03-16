@@ -1,0 +1,18 @@
+@mixin header-config {
+    background-color: #00f;
+    border-radius: 5px;
+    display: flex;
+    list-style: none;
+}
+
+// "mixins" with input
+@mixin header-items($y:5px, $x, $co) {
+    margin: $y $x;
+    color: $co;
+}
+
+@mixin custom-media ($width) {
+    @media screen and (max-width: $width) {
+        @content;  // Passing this feature for all the contents.
+    }
+}

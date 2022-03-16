@@ -1,0 +1,3 @@
+@function custom-width ($width) {
+    @return (100vw - $width)
+}
